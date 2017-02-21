@@ -1,0 +1,2 @@
+#!/bin/bash
+composer require clever-systems/mmm-builder clever-systems/mmm-runtime clever-systems/mmm_revert

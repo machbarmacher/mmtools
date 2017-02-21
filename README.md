@@ -16,3 +16,4 @@ Server wide tools.
 * ubersubdom # symlink and add uberspace sub-domain
 * unlock-settings # write-unprotect settings.php
 * mm-prepare-server # some settings
+* installation-init # require builder, runtime, revert
