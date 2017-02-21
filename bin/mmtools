@@ -1,0 +1,4 @@
+#!/bin/bash
+$binary=$(readlink -f $0)
+$dir=$(dirname $binary)
+cat $dir/../README.md
