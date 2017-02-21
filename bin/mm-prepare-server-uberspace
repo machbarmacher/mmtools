@@ -1,5 +1,5 @@
 #!/bin/bash
 echo Installing uberspace specific stuff...
-ln -s /var/www/virtual/$USER $HOME/www
-mkdir $HOME/www/installations
-ln -s /var/www/virtual/$USER/installations $HOME/installations
+ln -sf /var/www/virtual/$USER $HOME/www
+mkdir -p $HOME/www/installations
+ln -sf /var/www/virtual/$USER/installations $HOME/installations
