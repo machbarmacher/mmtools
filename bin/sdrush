@@ -6,9 +6,9 @@ exit 1;
 fi
 
 if [ -d docroot ]; then
-$docroot=docroot
+docroot=docroot
 elif [ -d web ]; then
-$docroot=web
+docroot=web
 fi
 
 cd $docroot/sites/$1
