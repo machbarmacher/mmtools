@@ -10,5 +10,13 @@
     ],
     "require": {
         "clever-systems/mmm-runtime": "dev-master"
+    },
+    "scripts": {
+        "prepare-server": [
+            "mm-prepare-server"
+        ],
+        "post-install-cmd": [
+            "@prepare-server"
+        ]
     }
 }
