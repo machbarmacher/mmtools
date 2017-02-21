@@ -1,0 +1,14 @@
+{
+    "name": "clever-systems/mmtools",
+    "description": "MM Tools.",
+    "type": "drupal-drush",
+    "authors": [
+        {
+            "name": "Axel Rutz",
+            "email": "axel.rutz@clever-systems.net"
+        }
+    ],
+    "require": {
+        "clever-systems/mmm-runtime": "dev-master"
+    }
+}

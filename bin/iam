@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ "$1" = "" ] ; then
+  tmux ls
+else
+tmux has-session -t "$1"
+if [ $? -eq 0 ] ; then
+    tmux -2 attach-session -t "$1"
+  else
+    tmux -2 new-session -s "$1"
+  fi
+fi
+

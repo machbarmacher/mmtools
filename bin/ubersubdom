@@ -1,0 +1,8 @@
+#!/bin/sh
+if [[ $# -ne 1 ]]; then
+echo "$0 = Add uberspace server subdomain for current drupal root"
+echo "Usage: $0 project"
+exit 1;
+fi
+
+uberdom $1.$HOSTNAME

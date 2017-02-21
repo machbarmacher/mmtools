@@ -1,0 +1,19 @@
+#!/bin/sh
+if [[ $# -ne 1 ]]; then
+echo "$0 = Add uberspace domain for current drupal root"
+echo "Usage: $0 project.com"
+exit 1;
+fi
+
+dir=$(drush dd)
+
+if [ -d dir ]; then
+echo "Must be used in drupal root."
+exit 1;
+fi
+
+realdir=$(readlink -f $1)
+ln -s $realdir /var/www/virtual/$USER/$1
+
+uberspace-add-domain $1
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+dir=$(drush ev "print conf_path();")
+
+if [ -d dir ]; then
+echo "unlock-settings must be used in a drupal site, it removes the settings write protection."
+exit 1;
+fi
+
+chmod u+w $dir
+chmod u+w $dir/settings.php

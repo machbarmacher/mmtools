@@ -1,0 +1,16 @@
+#!/bin/bash
+if [[ $# -lt 1 ]]; then
+echo "$0 = Site drush"
+echo "Usage: $0 site ..."
+exit 1;
+fi
+
+if [ -d docroot ]; then
+$docroot=docroot
+elif [ -d web ]; then
+$docroot=web
+fi
+
+cd $docroot/sites/$1
+shift
+drush $@

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if which uberspace-show-quota ; then
+mm-prepare-server-uberspace
+fi
