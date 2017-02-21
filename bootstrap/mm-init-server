@@ -58,6 +58,7 @@ fi
 if ! which mm-prepare-server ; then
 echo Installing mmtools...
 cgr clever-systems/mmtools --stability dev
+mmm-prepare-server
 else
 echo MMTools already there...
 fi

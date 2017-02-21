@@ -24,13 +24,5 @@
         "bin/uberdom",
         "bin/ubersubdom",
         "bin/unlock-settings"
-    ],
-    "scripts": {
-        "prepare-server": [
-            "mm-prepare-server"
-        ],
-        "post-install-cmd": [
-            "@prepare-server"
-        ]
-    }
+    ]
 }
