@@ -11,6 +11,20 @@
     "require": {
         "clever-systems/mmm-runtime": "dev-master"
     },
+    "bin": [
+        "bootstrap/mm-init-server",
+        "bin/ddrush",
+        "bin/iam",
+        "bin/mariadb",
+        "bin/mm-prepare-server",
+        "bin/mm-prepare-server-uberspace",
+        "bin/mmtools",
+        "bin/rmf",
+        "bin/sdrush",
+        "bin/uberdom",
+        "bin/ubersubdom",
+        "bin/unlock-settings"
+    ],
     "scripts": {
         "prepare-server": [
             "mm-prepare-server"
