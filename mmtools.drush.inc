@@ -5,6 +5,8 @@
 
 use clever_systems\mmm_runtime\Runtime;
 
+// @todo Set PHP version, add extensions for redis and opcache
+
 /**
  * Implements hook_drush_sitealias_alter
  *
