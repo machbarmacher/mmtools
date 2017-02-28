@@ -6,6 +6,8 @@
 use clever_systems\mmm_runtime\Runtime;
 
 // @todo Set PHP version, add extensions for redis and opcache
+// @todo Add tool to remove .git dirs:
+// find * -type d -name ".git" -exec rm -rf {} +
 
 /**
  * Implements hook_drush_command().
