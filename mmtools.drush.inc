@@ -23,7 +23,7 @@ function mmtools_drush_command() {
   $items['mmtools-site-install'] = array(
     'aliases' => ['mmsi'],
     'description' => 'Install site with autodetected defaults.',
-    'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_ROOT,
     'arguments' => [
       'name' => 'The site name (also lowercased DB prefix), defaults to Dev.'
     ],
