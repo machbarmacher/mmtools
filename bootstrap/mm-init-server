@@ -62,3 +62,9 @@ mm-prepare-server
 else
 echo MMTools already there...
 fi
+
+if [ ! -e ~/.drush/mmtools ]; then
+echo Linking mmtools...
+mkdir -p ~/.drush
+ln -s ~/.composer/global/clever-systems/mmtools ~/.drush
+fi
