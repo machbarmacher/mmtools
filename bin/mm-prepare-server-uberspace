@@ -1,5 +1,12 @@
 #!/bin/bash
 echo Installing uberspace specific stuff...
+
+if [ ! -e $HOME/www ] ; then
 ln -sf /var/www/virtual/$USER $HOME/www
+fi
+
 mkdir -p $HOME/www/installations
+
+if [ ! -e $HOME/installations ] ; then
 ln -sf /var/www/virtual/$USER/installations $HOME/installations
+fi
