@@ -1,8 +1,15 @@
 #!/bin/sh
 if [[ $# -ne 1 ]]; then
-echo "$0 = Add uberspace domain for current drupal root"
+echo "$0 = Add uberspace domain for current drupal"
 echo "Usage: $0 project.com"
 exit 1;
+fi
+
+if [ -d docroot ]; then
+cd docroot
+elseif
+if [ -d web ]; then
+cd web
 fi
 
 dir=$(drush dd)
