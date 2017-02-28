@@ -14,7 +14,7 @@ fi
 
 dir=$(drush dd)
 
-if [ -d dir ]; then
+if [ -d "$dir" ]; then
 echo "Must be used in drupal root."
 exit 1;
 fi
