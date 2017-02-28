@@ -66,8 +66,11 @@ function drush_mmtools_site_install($name = 'Dev') {
     @include DRUPAL_ROOT . '/../vendor/autoload.php';
   }
   $environment = Runtime::getEnvironment();
-  
-  global $databases;
+
+  // We booted to drupal_root, so no settings available. Make fake ones.
+  $settings = [];
+  $databases = [];
+
   $db_record =& $databases['default']['default'];
   if (!is_array($db_record)) {
     $db_record = [];
@@ -78,7 +81,7 @@ function drush_mmtools_site_install($name = 'Dev') {
     'database' => $environment->getUser() . '_' . $machine_name,
   ];
 
-  $environment->settings();
+  $environment->settings($settings, $databases);
 
   if (
     !empty($databases['default']['default']['username'])
