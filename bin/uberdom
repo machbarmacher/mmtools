@@ -7,8 +7,7 @@ fi
 
 if [ -d docroot ]; then
 cd docroot
-elseif
-if [ -d web ]; then
+elseif [ -d web ]; then
 cd web
 fi
 
