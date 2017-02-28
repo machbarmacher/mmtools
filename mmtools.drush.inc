@@ -59,9 +59,9 @@ function drush_mmtools_db_caches_clean() {
 }
 
 /**
- * Implements drush_hook_COMMAND_pre_validate for site-install.
+ * Implements drush_hook_COMMAND for site-install.
  */
-function mmtools_site_install($name = 'Dev') {
+function drush_mmtools_site_install($name = 'Dev') {
   if (defined('DRUPAL_ROOT')) {
     @include DRUPAL_ROOT . '/../vendor/autoload.php';
   }
