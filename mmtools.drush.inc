@@ -69,6 +69,9 @@ function drush_mmtools_site_install($name = 'Dev') {
   
   global $databases;
   $db_record =& $databases['default']['default'];
+  if (!is_array($db_record)) {
+    $db_record = [];
+  }
 
   $machine_name = preg_replace('#[^a-z0-9]#u', '_', strtolower($name));
   $db_record += [
