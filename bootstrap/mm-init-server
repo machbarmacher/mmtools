@@ -26,7 +26,7 @@ echo Installing .mmmrc...
 cat <<'EOD' > $HOME/.mmmrc
 PATH=$PATH:$HOME/.composer/vendor/bin
 EOD
-echo '. . $HOME/.mmmrc' >>$HOME/.bashrc
+echo '. $HOME/.mmmrc' >>$HOME/.bashrc
 else
 echo .mmmrc already there...
 fi
