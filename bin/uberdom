@@ -21,5 +21,7 @@ fi
 realdir=$(readlink -f $dir)
 ln -s $realdir /var/www/virtual/$USER/$1
 
+# No need to create *.$user.$HOSTNAME.uberspace.de
+if [[ ! $1 =~ $user.$HOSTNAME.uberspace.de$ ]]; then
 uberspace-add-domain -wd $1
-
+fi
