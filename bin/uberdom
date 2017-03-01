@@ -18,8 +18,8 @@ echo "Must be used in drupal root."
 exit 1;
 fi
 
-realdir=$(readlink -f $1)
+realdir=$(readlink -f $dir)
 ln -s $realdir /var/www/virtual/$USER/$1
 
-uberspace-add-domain $1
+uberspace-add-domain -wd $1
 
