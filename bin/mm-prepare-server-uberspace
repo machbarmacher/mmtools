@@ -10,3 +10,5 @@ mkdir -p $HOME/www/installations
 if [ ! -e $HOME/installations ] ; then
 ln -sf /var/www/virtual/$USER/installations $HOME/installations
 fi
+
+# @fixme Add EDITOR & VISUAL to .bashrc
