@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "clever-systems/mmm-runtime": "dev-master"
     },
     "bin": [
         "bootstrap/mm-init-server",

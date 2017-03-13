@@ -61,6 +61,12 @@ function drush_mmtools_site_install($name = 'Dev') {
   if (defined('DRUPAL_ROOT')) {
     @include DRUPAL_ROOT . '/../vendor/autoload.php';
   }
+  // We require Runtime here to use its feature to recognize server types.
+  // We don't require it here to avoid issues with double function definitions.
+  // @todo Consider splitting recognizing server type and generating settings.
+  if (!class_exists(Runtime::class)) {
+    return drush_set_error('mmtools_site_install:needs_runtime', dt('Please install mmm_runtime in your installation.'));
+  }
   $environment = Runtime::getEnvironment();
 
   // We booted to drupal_root, so no settings available. Make fake ones.
