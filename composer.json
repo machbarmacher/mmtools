@@ -1,11 +1,11 @@
 {
-    "name": "clever-systems/mmtools",
+    "name": "machbarmacher/mmtools",
     "description": "MM Tools.",
     "type": "drupal-drush",
     "authors": [
         {
             "name": "Axel Rutz",
-            "email": "axel.rutz@clever-systems.net"
+            "email": "axel.rutz@machbarmacher.net"
         }
     ],
     "require": {
