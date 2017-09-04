@@ -1,0 +1,42 @@
+#!/bin/bash
+PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin
+
+# Parse options.
+for arg in "$@"; do
+  case "$arg" in
+    --now ) now=true;;
+    --nodelay ) nodelay=true;;
+    * ) echo "Unknown option: '$arg' / '$@'"; exit 1;;
+  esac
+done
+
+# Letsencrypt sometimes changes the certificate directory when the domain configuration changes,
+# e.g. from example.com to example.com-0001. We fix this by always using the last touched directory.
+function getcurrentdirname() {
+  ls -t1 --group-directories-first ~/.config/letsencrypt/live/ | head -1
+}
+
+# sleep for a random time so not all certificates get renewed at the same time
+if [ -z "$nodelay" ]; then
+  sleep $(expr $RANDOM % 600)
+fi
+
+dir=$(getcurrentdirname)
+openssl x509 -checkend $(( 21 * 86400 )) -in ~/.config/letsencrypt/live/${dir}/cert.pem > /dev/null
+
+if [ $? != 0 ] || [ -n "$now" ]; then
+	# run let's encrypt
+	letsencrypt certonly
+	# Now this could have changed!
+    dir=$(getcurrentdirname)
+    # import certificate
+	uberspace-add-certificate -k ~/.config/letsencrypt/live/${dir}/privkey.pem -c ~/.config/letsencrypt/live/${dir}/cert.pem
+	if [ -n "$debugmail" ] && [ "$debuglevel" -ge 1 ]; then
+	  mail -s "mm-letsencrypt-renew $dir: Renewed certificate" "$debugmail"  </dev/null >/dev/null
+	fi
+else
+	if [ -n "$debugmail" ] && [ "$debuglevel" -ge 1 ]; then
+      enddate=$(openssl x509 -enddate -in ~/.config/letsencrypt/live/${dir}/cert.pem | head -1)
+	  mail -s "mm-letsencrypt-renew $dir: Nothing to do, cert $enddate" "$debugmail" </dev/null >/dev/null
+	fi
+fi
