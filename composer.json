@@ -15,6 +15,7 @@
         "bin/ddrush",
         "bin/iam",
         "bin/mariadb",
+        "bin/mm-letsencrypt-renew",
         "bin/mm-prepare-server",
         "bin/mm-prepare-server-uberspace",
         "bin/mmtools",
