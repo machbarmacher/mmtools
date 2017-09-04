@@ -57,7 +57,7 @@ fi
 
 if ! which mm-prepare-server ; then
 echo Installing mmtools...
-cgr clever-systems/mmtools --stability dev
+cgr machbarmacher/mmtools --stability dev
 mm-prepare-server
 else
 echo MMTools already there...
@@ -66,5 +66,5 @@ fi
 if [ ! -e ~/.drush/mmtools ]; then
 echo Linking mmtools...
 mkdir -p ~/.drush
-ln -s ~/.composer/global/clever-systems/mmtools ~/.drush
+ln -s ~/.composer/global/machbarmacher/mmtools ~/.drush
 fi
