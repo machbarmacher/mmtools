@@ -1,7 +1,10 @@
 MM Tools
 ========
 
-Server wide tools.
+Bootstrap:
+`bash <(curl -s https://raw.githubusercontent.com/machbarmacher/mmtools/master/bootstrap/mm-init-server)`
+
+Server wide tools:
 
 * mmtools-help # this help
 * Fixes local drush aliases
@@ -17,3 +20,4 @@ Server wide tools.
 * unlock-settings # write-unprotect settings.php
 * mm-prepare-server # some settings
 * installation-init # require builder, runtime, revert
+* mm-letsencrypt-renew # wraps uberspace certbot
