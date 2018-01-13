@@ -64,7 +64,7 @@ fi
 
 if ! which mm-prepare-server ; then
 echo Installing mmtools...
-composer global bin mmtools machbarmacher/mmtools --stability dev
+composer global bin mmtools require machbarmacher/mmtools --stability dev
 mm-prepare-server
 else
 echo MMTools already there...
