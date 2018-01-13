@@ -31,14 +31,14 @@ else
 echo .mmmrc already there...
 fi
 
-if ! $(composer global show bamarni/composer-bin-plugin) ; then
+if [[ ! $(composer global show bamarni/composer-bin-plugin) ]] ; then
 echo Installing composer bin plugin...
 composer global require bamarni/composer-bin-plugin
 else
 echo composer bin plugin already there...
 fi
 
-if ! $(composer global show hirak/prestissimo) ; then
+if [[ ! $(composer global show hirak/prestissimo) ]] ; then
 echo Installing composer prestissimo...
 composer global require hirak/prestissimo
 else
@@ -73,5 +73,5 @@ fi
 if [ ! -e ~/.drush/mmtools ]; then
 echo Linking mmtools...
 mkdir -p ~/.drush
-ln -s ~/.composer/vendor-bin/mmtools/vendor/machbarmacher/mmtools ~/.drush
+ln -sf ~/.composer/vendor-bin/mmtools/vendor/machbarmacher/mmtools ~/.drush
 fi
